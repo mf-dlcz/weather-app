@@ -33,7 +33,31 @@ function cityInput(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", cityInput);
-//Challenge 2:
+
+function displayForecast() {
+	let forecastElement = document.querySelector("#forecast");
+
+	let forecastHTML = `<div class="row">`;
+	let days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"];
+	days.forEach(function (day) {
+		forecastHTML =
+			forecastHTML +
+			`
+					<div class="col-2">
+						<div class="weather-forecast-date">${day}</div>
+							⛅
+							<div class="weather-forecast-temp">
+								<span class="max-temp">68◦ | </span>
+								<span class="min-temp">54◦</span>
+							</div>
+					</div>
+	`;
+	});
+
+	forecastHTML = forecastHTML + `</div>`;
+	forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemp(response) {
 	console.log(response.data.name);
 	document.querySelector("#city").innerHTML = response.data.name;
@@ -72,3 +96,4 @@ function getCurrentLocation(event) {
 	navigator.geolocation.getCurrentPosition(searchLocation);
 }
 searchCity("Tokyo");
+displayForecast();

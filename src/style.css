@@ -33,10 +33,10 @@ form {
 	color: #202124;
 }
 .number {
-	font-size: 64px;
-	font-weight: bold;
+	font-size: 48px;
+	font-weight: 400;
 	text-align: center;
-	line-height: 1;
+	line-height: 60px;
 	color: #202124;
 }
 .degrees {
@@ -54,6 +54,7 @@ form {
 .weather-forecast {
 	text-align: center;
 	color: #000;
+	text-align: center;
 }
 .weather-forecast-date {
 	font-size: 16px;
