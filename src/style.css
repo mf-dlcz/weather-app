@@ -4,8 +4,6 @@ body {
 	display: block;
 	margin: 0 auto;
 	color: #202124;
-	font-size: 12px;
-	font-weight: 400;
 }
 ul {
 	list-style: none;
@@ -41,17 +39,6 @@ form {
 	line-height: 1;
 	color: #202124;
 }
-.row .col {
-	line-height: 28px;
-	text-align: center;
-	padding: 3px;
-	width: auto;
-	font-size: 16px;
-}
-
-.col-auto {
-	padding: 5px;
-}
 .degrees {
 	display: ruby-text;
 	font-size: 18px;
@@ -64,8 +51,21 @@ form {
 	font-size: 48px;
 	padding: 0;
 }
-
-#city {
+.weather-forecast {
+	text-align: center;
+	color: #000;
+}
+.weather-forecast-date {
+	font-size: 16px;
+	opacity: 0.5;
+}
+.min-temp {
+	opacity: 0.5;
+}
+.weather-forecast-temp {
+	font-size: 13px;
+}
+.min-temp #city {
 	font-size: 22px;
 	font-weight: 600;
 }
