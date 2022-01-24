@@ -8,10 +8,6 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Weather App</title>
-		<script
-			src="https://kit.fontawesome.com/1809e4703c.js"
-			crossorigin="anonymous"
-		></script>
 		<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -56,13 +52,10 @@
 					<div class="row">
 						<div class="col-6">
 							<div class="clearfix weather-temp">
-								<i id="icon" class="float-left fas fa-smog smog"></i>
+								<img src="" alt="Clear" id="icon" class="float-left" />
 								<div class="float-left">
 									<strong id="numb"></strong>
-									<span class="units">
-										<a href="#" id="celsius-link" class="active">°C</a>
-										<a href="#" id="fahrenheit-link">°F</a></span
-									>
+									<span class="units">°F</span>
 								</div>
 							</div>
 						</div>
@@ -76,7 +69,9 @@
 					<div class="weather-forecast" id="forecast"></div>
 				</div>
 				<small>
-					<a href="" target="_blank">Open-source code </a>
+					<a href="https://github.com/mf-dlcz/weather-app" target="_blank"
+						>Open-source code
+					</a>
 					by Maria Delacruz
 				</small>
 			</div>

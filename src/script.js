@@ -22,24 +22,6 @@ function displayDate(timestamp) {
 	return `${daysOfWeek} ${hour}:${min}`;
 }
 
-function displayFahrenheitTemp(event) {
-	event.preventDefault();
-	let tempEl = document.querySelector("#numb");
-
-	celsiusLink.classList.remove("active");
-	fahrenheitLink.classList.add("active");
-	let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-	tempEl.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function displayCelsiusTemp(event) {
-	event.preventDefault();
-	celsiusLink.classList.add("active");
-	fahrenheitLink.classList.remove("active");
-	let tempEl = document.querySelector("#numb");
-	tempEl.innerHTML = Math.round(celsiusTemp);
-}
-
 function searchCity(city) {
 	let apiKey = "8478c376956a3e191ae5d6af99d9891c";
 	let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -76,8 +58,8 @@ function displayForecast(response) {
 								forecastDay.weather[0].icon
 							}@2x.png" alt="" width="42" />
 							<div class="weather-forecast-temp">
-								<span class="max-temp">${Math.round(forecastDay.temp.max)} </span>
-								<span class="min-temp">${Math.round(forecastDay.temp.min)}</span>
+								<span class="max-temp">${Math.round(forecastDay.temp.max)}°</span>
+								<span class="min-temp">${Math.round(forecastDay.temp.min)}°</span>
 							</div>
 					</div>
 	`;
@@ -90,7 +72,7 @@ function displayForecast(response) {
 
 function getForecast(cordinates) {
 	let apiKey = "8478c376956a3e191ae5d6af99d9891c";
-	let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}`;
+	let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=imperial`;
 
 	axios.get(apiUrl).then(displayForecast);
 }
@@ -114,22 +96,14 @@ function showTemp(response) {
 	dateEl.innerHTML = displayDate(response.data.dt * 1000);
 	iconEl.setAttribute(
 		"src",
-		`http:\\openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+		`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 	);
 	iconEl.setAttribute("alt", response.data.weather[0].description);
+
 	getForecast(response.data.coord);
 }
-
-let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", cityInput);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
-
 searchCity("Tokyo");
-displayForecast();
