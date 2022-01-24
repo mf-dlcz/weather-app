@@ -1,12 +1,22 @@
 body {
-	font-family: "Times New Roman", Times, serif;
+	font-family: sans-serif;
 }
 h1 {
 	color: #878787;
-	font-size: 24px;
-	font-weight: 100;
+	font-size: 30px;
+	font-weight: 120;
 	line-height: 28px;
 	margin-bottom: 0;
+}
+h3 {
+	font-size: 16px;
+	font-weight: 300;
+	text-align: left;
+	text-transform: capitalize;
+	margin-bottom: 0;
+	display: block;
+	padding-right: 20px;
+	color: #878787;
 }
 ul {
 	margin: 0;
@@ -16,7 +26,7 @@ li {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	color: rgb(135, 135, 135);
+	color: #878787;
 	font-size: 16px;
 	font-weight: 100;
 	line-height: 19px;
@@ -43,10 +53,11 @@ li:first-letter {
 	width: 64px;
 }
 .weather-temp strong {
-	color: rgb(33, 33, 33);
+	color: #000;
 	font-size: 64px;
 	line-height: 1;
 	font-weight: 400;
+	padding-left: 40px;
 }
 .weather-temp .units {
 	position: relative;
@@ -54,7 +65,7 @@ li:first-letter {
 	top: -34px;
 }
 .weather-temp .active {
-	color: rgb(33, 33, 33);
+	color: #000;
 	cursor: default;
 }
 .weather-temp .active:hover {
